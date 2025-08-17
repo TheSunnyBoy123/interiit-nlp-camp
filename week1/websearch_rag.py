@@ -51,7 +51,7 @@ except Exception as e:
 def web_scrape_store(query: str) :
    
     logger.info(f"Starting web scraping for query: '{query}'")
-    start_time = time.time()
+    
     
     try:
         try:
@@ -107,9 +107,9 @@ def web_scrape_store(query: str) :
                 logger.debug(traceback.format_exc())
                 continue
 
-        elapsed_time = time.time() - start_time
+        
         if stored_chunks > 0:
-            logger.info(f"Successfully stored {stored_chunks} chunks in {elapsed_time:.2f} seconds")
+            
             return True
         else:
             logger.warning("No chunks were stored")
